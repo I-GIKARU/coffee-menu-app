@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenyan Coffee Delights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="light-theme">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-mug-hot"></i>
+                <h1>Kenyan Coffee Delights</h1>
+            </div>
+            <div class="header-controls">
+                <button id="theme-toggle" class="btn-icon">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="admin-toggle" class="btn btn-outline">
+                    <i class="fas fa-user-cog"></i> Admin Mode
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="controls">
+            <div class="search-filter">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search" placeholder="Search coffee...">
+                </div>
+                <select id="filter-type" class="styled-select">
+                    <option value="all">All Types</option>
+                    <option value="hot">Hot Coffee</option>
+                    <option value="iced">Iced Coffee</option>
+                    <option value="espresso">Espresso</option>
+                    <option value="traditional">Traditional Kenyan</option>
+                </select>
+            </div>
+            
+            <div class="admin-controls hidden">
+                <div class="section-title">
+                    <h2>Admin Controls</h2>
+                    <div class="divider"></div>
+                </div>
+                <form id="add-coffee-form" class="card form-card">
+                    <h3>Add New Coffee</h3>
+                    <div class="form-group">
+                        <label for="coffee-name">Coffee Name</label>
+                        <input type="text" id="coffee-name" placeholder="Enter coffee name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="coffee-type">Type</label>
+                            <select id="coffee-type" required>
+                                <option value="">Select type</option>
+                                <option value="hot">Hot</option>
+                                <option value="iced">Iced</option>
+                                <option value="espresso">Espresso</option>
+                                <option value="traditional">Traditional</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="coffee-price">Price (KES)</label>
+                            <input type="number" id="coffee-price" placeholder="Price" min="0" step="50" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="coffee-image">Image URL</label>
+                        <input type="text" id="coffee-image" placeholder="https://example.com/image.jpg" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="coffee-description">Description</label>
+                        <textarea id="coffee-description" placeholder="Enter coffee description"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Coffee
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="coffee-menu">
+            <div class="section-title">
+                <h2>Our Coffee Selection</h2>
+                <div class="divider"></div>
+            </div>
+            <div id="coffee-list" class="coffee-grid"></div>
+        </section>
+
+        <section class="coffee-details hidden">
+            <div class="coffee-info card">
+                <div class="coffee-image">
+                    <img id="detail-image" src="" alt="Coffee image">
+                </div>
+                <div class="coffee-text">
+                    <div class="coffee-header">
+                        <h2 id="detail-name"></h2>
+                        <p class="price" id="detail-price"></p>
+                    </div>
+                    <div class="coffee-meta">
+                        <span class="badge" id="detail-type"></span>
+                    </div>
+                    <p class="description" id="detail-description"></p>
+                    <div class="admin-controls hidden">
+                        <button id="edit-coffee" class="btn btn-outline">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button id="delete-coffee" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reviews">
+                <div class="section-title">
+                    <h3>Customer Reviews</h3>
+                    <div class="divider"></div>
+                </div>
+                <form id="add-review-form" class="card form-card">
+                    <h4>Add Your Review</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewer-name">Your Name</label>
+                            <input type="text" id="reviewer-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-rating">Rating</label>
+                            <select id="review-rating" required>
+                                <option value="5">★★★★★</option>
+                                <option value="4">★★★★☆</option>
+                                <option value="3">★★★☆☆</option>
+                                <option value="2">★★☆☆☆</option>
+                                <option value="1">★☆☆☆☆</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-text">Your Review</label>
+                        <textarea id="review-text" placeholder="Share your experience..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit Review
+                    </button>
+                </form>
+                
+                <div id="reviews-list"></div>
+            </div>
+            
+            <button id="back-to-menu" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-mug-hot"></i>
+                    <span>Kenyan Coffee Delights</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2023 Kenyan Coffee Delights. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
