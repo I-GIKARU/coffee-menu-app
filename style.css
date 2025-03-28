@@ -472,14 +472,7 @@ textarea {
         flex-direction: column;
     }
 
-    .coffee-image {
-        max-width: 100%;
-    }
-
-    .header-content {
-        flex-direction: column;
-        gap: 15px;
-    }
+    
 
    
 }
