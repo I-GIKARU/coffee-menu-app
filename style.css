@@ -435,31 +435,6 @@ textarea {
     font-size: 1.1rem;
 }
 
-.review-date {
-    font-size: 0.8rem;
-    color: var(--text-light);
-}
-
-.delete-review {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: var(--error-color);
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.delete-review:hover {
-    text-decoration: underline;
-}
-
-/* Utility Classes */
-.hidden {
-    display: none !important;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
