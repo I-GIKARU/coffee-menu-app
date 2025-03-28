@@ -1,7 +1,7 @@
-// API Configuration
+// API Configuration on render 
 const API_ENDPOINT = 'https://coffee-db.onrender.com';
 
-// DOM Elements
+// DOM Elements declared as constants
 const coffeeList = document.getElementById('coffee-list');
 const coffeeMenuSection = document.querySelector('.coffee-menu');
 const coffeeDetailsSection = document.querySelector('.coffee-details');
