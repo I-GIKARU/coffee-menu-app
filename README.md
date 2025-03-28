@@ -30,7 +30,7 @@ Coffee Menu App is an interactive single-page web application that allows users 
 ### 1. Clone the Repository
 
 ```bash
-git clone giturl
+git clone https://github.com/I-GIKARU/coffee-menu-app
 cd coffee-menu-app
 ```
 
