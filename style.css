@@ -481,10 +481,7 @@ textarea {
         gap: 15px;
     }
 
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-    }
+   
 }
 
 @media (max-width: 480px) {
