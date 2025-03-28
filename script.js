@@ -1,5 +1,5 @@
 // API Configuration on render 
-const API_ENDPOINT = 'http://localhost:3000/';
+const API_ENDPOINT = 'https://coffee-db.onrender.com';
 
 // DOM Elements declared as constants
 const coffeeList = document.getElementById('coffee-list');
