@@ -41,7 +41,6 @@ async function fetchCoffees() {
         const coffees = await response.json();
         displayCoffees(coffees);
     } catch (error) {
-        console.error('Error fetching coffees:', error);
         showError('Failed to load coffee menu. Please try again later.');
     }
 }
@@ -101,7 +100,6 @@ async function showCoffeeDetails(coffeeId) {
         
         fetchReviews(coffeeId);
     } catch (error) {
-        console.error('Error fetching coffee details:', error);
         showError('Failed to load coffee details. Please try again.');
     }
 }
@@ -113,7 +111,6 @@ async function fetchReviews(coffeeId) {
         const reviews = await response.json();
         displayReviews(reviews);
     } catch (error) {
-        console.error('Error fetching reviews:', error);
         showError('Failed to load reviews. Please try again.');
     }
 }
@@ -172,7 +169,6 @@ function filterCoffees() {
             displayCoffees(filtered);
         })
         .catch(error => {
-            console.error('Error filtering coffees:', error);
             showError('Failed to filter coffees. Please try again.');
         });
 }
@@ -237,7 +233,6 @@ async function handleAddCoffee(e) {
             throw new Error('Failed to add coffee');
         }
     } catch (error) {
-        console.error('Error adding coffee:', error);
         showError('Failed to add coffee. Please try again.');
     }
 }
@@ -271,7 +266,6 @@ async function handleAddReview(e) {
             throw new Error('Failed to add review');
         }
     } catch (error) {
-        console.error('Error adding review:', error);
         showError('Failed to submit review. Please try again.');
     }
 }
@@ -322,7 +316,6 @@ async function handleEditCoffee() {
             throw new Error('Failed to update coffee');
         }
     } catch (error) {
-        console.error('Error updating coffee:', error);
         showError('Failed to update coffee. Please try again.');
     }
 }
@@ -352,7 +345,6 @@ async function handleDeleteCoffee() {
             throw new Error('Failed to delete coffee');
         }
     } catch (error) {
-        console.error('Error deleting coffee:', error);
         showError('Failed to delete coffee. Please try again.');
     }
 }
@@ -373,7 +365,6 @@ async function handleDeleteReview(reviewId) {
             throw new Error('Failed to delete review');
         }
     } catch (error) {
-        console.error('Error deleting review:', error);
         showError('Failed to delete review. Please try again.');
     }
 }
